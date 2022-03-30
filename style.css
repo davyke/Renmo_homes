@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Nunito+Sans&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    width: 100%;
+    font-family: 'Nunito Sans', sans-serif;
+    
+}
+.container{
+    width:100%;
+
+}
+.header nav{
+    width: 100%;
+    position: fixed;
+    display: flex;
+    top:0;
+    left: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0.1);
+    color: white;
+    z-index: 9999;
+    background-color: rgb(22, 41, 22);
+
+}
+
+.header nav .logo{
+    letter-spacing: 1px;
+    position: relative;
+
+
+
+}
+.links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    position: relative;
+    list-style:none;
+
+}
+.header nav .links li:hover{
+    border-bottom: 1px white solid;
+}
+.header nav .links a{
+    text-decoration: none;
+    color: white;
+}
+.header nav .links .sub-menu-1 ul{
+    display: none;
+}
+.header nav .links li:hover .header nav .links .sub-menu-1 ul{
+    display: block;
+    position: absolute;
+    background-color: white;
+    margin-top: 15px;
+} 
+.hamberger{
+    position: fixed;
+    right: 10px;
+    top: 5px;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+    flex-direction: column;
+    display: none;
+
+    
+}
+.hamberger div{
+    width: 100%;
+    height: 1.5px ;
+    background-color: white;
+    border-radius: 30%;
+
+}
+
+.hero{
+    width: 100%;
+    
+    
+}
+.image_wrapper{
+    width: 100%;
+    height: 100vh;
+    position:relative ;
+    perspective: none;
+    overflow: hidden;
+}
+.image_wrapper img{
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    animation: scale 25s;
+}
+.text{
+    position: absolute;
+    top: 10rem;
+    left: 4rem;
+    color: white;
+    perspective: 100rem;
+}
+.text h1{
+    font-family: 'Abril Fatface', cursive;
+    color:black;
+    font-size: 2.5rem; 
+    letter-spacing: 1px;
+    opacity: 0;
+    animation: movebanner 5s forwards;
+    
+}
+.text p{
+    margin-top: 2.1rem;
+    opacity: 0;
+    animation: movebanner 7s forwards ;
+    width: 70%;
+
+}
+.text button{
+    margin-top: 2rem;
+    width: 6rem;
+    text-transform: uppercase;
+    height: 2rem;
+    border-radius: 2px;
+    border: none;
+    opacity: 0;
+    animation: movebanner 9s forwards;
+}
+.text button:hover{
+    background-color:rgb(22, 41, 22) ;
+    color: white;
+    border: none;
+}
+@keyframes scale{
+    0%{
+        transform: scale(1.4);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes movebanner{
+    0%{
+        transform: translateY(40rem) rotateY(-30deg);
+    }
+    100%{
+        transform: translateY(0) rotateY(0deg);
+        opacity: 1;
+    }
+}
+.midpage{
+    width: 100%;
+    margin-top: 3rem;
+    display: flex;
+    padding-bottom: 6rem;
+    
+    
+    
+}
+.invite{
+    width:60%;
+    padding-left: 2rem;
+    overflow-x: hidden;
+}
+
+.midimage{
+    width: 30%;
+    height: 210px;
+    background:url("./midpage.jpg") no-repeat center center/cover;
+    background-size: cover;
+    object-fit: cover;
+    box-shadow: 0 2px 4px 0 rgb(0,0,.1);
+}
+.midpage h2{
+    letter-spacing: 1px;
+}
+.midpage p{
+    line-height: 2.3rem;
+}
+.midpage h2 span{
+    color:rgb(22, 41, 22) ;
+}
+@media screen and (max-width:720px){
+    body{
+        width: 100%;
+    }
+    .links{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        height: 100vh;
+        background-color: rgb(22, 41, 22);
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        transform: translateX(100%);
+        transition:transform 0.5s;
+
+    }
+    .image_wrapper{
+        height: 80vh;
+    }
+    .hamberger{
+        display: block;
+        display: flex;
+
+    }
+    .slide .links{
+        transform: translateX(0%);
+    }
+    
+}
+
+.section-header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    padding-bottom: 3rem;
+}
+.section-header h1{
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+.section-header .underline{
+    width: 4rem;
+    height: 5px;
+    background-color: rgb(22, 41, 22);
+    border-radius: 2px;
+}
+.card-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 4rem;
+    
+
+}
+.card{
+    width: 15rem;
+    height: 17rem;
+    box-shadow: 0 5px 6px rgba(0,0,0.2);
+    border-radius: 1rem;
+    position: relative;
+
+
+    
+}
+.card-imagewraper{
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+}
+.card-imagewraper img{
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    transition: opacity .3s ease-in-out;
+
+}
+.card-info{
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease-in-out;
+
+}
+.card:hover .card-imagewraper img{
+    opacity: 0.6;
+}
+.card:hover .card-info{
+    bottom: 1rem;
+    opacity: 1;
+    visibility: visible;
+
+}
+.card-info h2{
+    font-weight: 300;
+    font-size: 20px;
+    color: white;
+}
+.card-info h3{
+    font-size:16;
+    font-weight: 300;
+}
+.card-info p{
+    font-size: 12px;
+    color: white;
+
+}
+.card-info button{
+    background-color: white;
+    border: none;
+    font-size: 10px;
+    width: 4rem;
+    height: 1.5rem;
+}
+

@@ -1,0 +1,10 @@
+:root{
+    --hero-bg:white;
+}
+.btn{
+    align-self: center;
+
+}
+.search-control::placeholder{
+    color: var(--hero-bg);
+}
